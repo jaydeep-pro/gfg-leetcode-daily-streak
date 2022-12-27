@@ -1,0 +1,21 @@
+long long maxArea(long long A[], int len)
+{
+    int start=0;
+    int end= len-1;
+    int height=0;
+    long long ans= 0;
+    long long temp=0;
+    
+    while(start < end){
+        height= min(A[start], A[end]);
+        
+        temp= height*(end -start);
+        
+        ans= max(ans, temp);
+        
+        if(A[start]<A[end]) start++;
+        else end--;
+        
+    }
+    return ans;
+}
